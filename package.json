@@ -1,0 +1,14 @@
+{
+  "name": "tutorial",
+  "version": "1.0.0",
+  "main": "main.js",
+  "license": "MIT",
+  "author": {
+    "name": "Jonathan",
+    "email": "jonarc06@gmail.com",
+    "url": "https://www.linkedin.com/in/jonathan-rodrigues-cardoso/"
+  },
+  "devDependencies": {
+    "electron": "^20.1.3"
+  }
+}
