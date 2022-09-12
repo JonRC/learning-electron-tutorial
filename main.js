@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 
 const createWindow = () => {
@@ -9,6 +9,11 @@ const createWindow = () => {
       preload: path.join(__dirname, "preload.js"),
       devTools: true,
     },
+  });
+
+  ipcMain.handle("ping", async () => {
+    await wait(500);
+    return "pong";
   });
 
   browserWindow.loadFile("index.html");
@@ -25,3 +30,5 @@ app.whenReady().then(() => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
 });
+
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
