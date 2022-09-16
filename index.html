@@ -10,13 +10,25 @@
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
-    <title>Hello from Electron renderer!</title>
+    <title>Hello World from Electron</title>
   </head>
   <body>
-    <h1>Hello from Electron renderer!</h1>
+    <h1>Hello World from Electron</h1>
     <p>👋</p>
     <p id="info">fdsafds</p>
     <p id="test"></p>
+
+    <br />
+
+    <div>
+      <input type="text" id="title" />
+      <button id="btn">Click</button>
+
+      <input type="text" readonly id="file-name" />
+      <button id="btn-file">Select file</button>
+    </div>
+
+    <strong id="counter">0</strong>
   </body>
   <script src="./renderer.js"></script>
 </html>

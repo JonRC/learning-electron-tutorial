@@ -17,4 +17,23 @@ const exec = async () => {
   test.innerText = `ping ${result} in ${Date.now() - pingTime}ms`;
 };
 
+const button = document.getElementById("btn");
+const input = document.getElementById("title");
+button.addEventListener("click", () => {
+  console.log("fadsklfdjsalk");
+  window.api.setTitle(input.value);
+});
+
+const fileButton = document.getElementById("btn-file");
+const fileInput = document.getElementById("file-name");
+fileButton.addEventListener("click", async () => {
+  const path = await window.api.getFile().catch(console.log);
+  fileInput.value = path;
+});
+
+const counter = document.getElementById("counter");
+window.api.onCounterUpdate((event, increase) => {
+  counter.innerText = Number(counter.innerText) + increase;
+});
+
 exec();
